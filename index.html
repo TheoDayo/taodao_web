@@ -79,7 +79,7 @@
 </section>
 
 <section class="order-form">
-    <form id="orderForm">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbwOTo58TxI966Qmjt7ix19OGLF5mOlUA_Xs9aJ2H0fI5GcA3lkn3Kh-Np45O5lj5Xvk/exec" id="orderForm">
         <div>
             <label><input type="radio" name="deliveryType" value="pickup"> Pickup</label>
             <label><input type="radio" name="deliveryType" value="delivery"> Delivery</label>
@@ -108,7 +108,7 @@
         </div>
 
         <div>
-            <button type="button" onclick="submitForm()">Submit</button>
+            <input type="submit" value="Submit" id="submit"></input>
         </div>
     </form>
 </section>

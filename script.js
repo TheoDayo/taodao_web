@@ -27,32 +27,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function submitForm() {
-    var dishName = document.getElementById('dishName').value;
-    var time = document.getElementById('time').value;
-    var userName = document.getElementById('userName').value;
+// function submitForm() {
+//     var dishName = document.getElementById('dishName').value;
+//     var time = document.getElementById('time').value;
+//     var userName = document.getElementById('userName').value;
 
-    var formData = {
-        dishName: dishName,
-        time: time,
-        userName: userName
-    };
+//     var formData = {
+//         dishName: dishName,
+//         time: time,
+//         userName: userName
+//     };
 
-    // Send data to Google Sheets using Google Apps Script web app
-    fetch('https://script.google.com/macros/s/AKfycbwOTo58TxI966Qmjt7ix19OGLF5mOlUA_Xs9aJ2H0fI5GcA3lkn3Kh-Np45O5lj5Xvk/exec', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Form submitted successfully!');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('Error submitting form. Please try again later.');
-    });
-}
+//     // Send data to Google Sheets using Google Apps Script web app
+//     fetch('https://script.google.com/macros/s/AKfycbwOTo58TxI966Qmjt7ix19OGLF5mOlUA_Xs9aJ2H0fI5GcA3lkn3Kh-Np45O5lj5Xvk/exec', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//         alert('Form submitted successfully!');
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+//         alert('Error submitting form. Please try again later.');
+//     });
+// }
