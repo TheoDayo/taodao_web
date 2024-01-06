@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #FF7A00;
+    color: white;
+    padding: 15px
+}
+
+.menu {
+    margin: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+.cell {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-form {
+    margin: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
