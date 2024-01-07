@@ -1,23 +1,118 @@
-<form action="https://sheetdb.io/api/v1/kji2pl9y6sbu9" method="POST" id="sheetdb-form">
-    customerName: <input name="data[customerName]">
-    deliveryType: <input name="data[deliveryType]">
-    dishName: <input name="data[dishName]">
-    time: <input name="data[time]">
-    <button type="submit">Submit</button>
-  </form>
-  
-  <script>
-    var form = document.getElementById('sheetdb-form');
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      fetch(form.action, {
-          method : "POST",
-          body: new FormData(document.getElementById("sheetdb-form")),
-      }).then(
-          response => response.json()
-      ).then((html) => {
-        // you can put any JS code here
-        alert('success')
-      });
-    });
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tao Dao</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo" style="font-family: 'Baron', sans-serif;">Tao Dao</div>
+</nav>
+
+<section class="menu">
+    <div class="grid">
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <!-- Repeat the above cell structure for other dishes -->
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+        <div class="cell">
+            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <div class="dish-name">Kung Pao Chicken</div>
+            <div class="dietary-icon">🌱</div>
+            <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
+        </div>
+    </div>
+</section>
+
+<section class="order-form">
+    <form method="post" action="https://sheetdb.io/api/v1/kji2pl9y6sbu9" id="sheetdb-form">
+        <div>
+            <label><input type="radio" name="deliveryType" value="pickup">Pickup</label>
+            <label><input type="radio" name="deliveryType" value="delivery">Delivery</label>
+        </div>
+
+        <div>
+            <label for="dishName">Dish Name:</label>
+            <select id="dishName" class="dish-name">
+                <option value="Kung Pao Chicken">Kung Pao Chicken</option>
+                <option value="Kung Pao Tofu">Kung Pao Tofu</option>
+                <option value="Pork Yaki Udon">Pork Yaki Udon</option>
+                <!-- Repeat options for other dishes -->
+            </select>
+        </div>
+
+        <div>
+            <label for="time">Time:</label>
+            <select id="time">
+                <!-- Options will be dynamically updated based on radio button selection using JavaScript -->
+            </select>
+        </div>
+
+        <div>
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName" name="customerName">
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" id="submit"></input>
+        </div>
+    </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
