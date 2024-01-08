@@ -4,7 +4,7 @@ body {
 
 nav {
     background-color: #FF7A00;
-    color: white;
+    color: black;
     padding: 15px
 }
 
@@ -49,3 +49,78 @@ img {
     height: 200px;
 }
 
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+/* table, td, th {
+    border: 1px solid black;
+} */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.dish-name, .deliveryType, [name^="data[time"] {
+    width: 100%; /* Make the selects fill the entire width of the cell */
+    padding: 8px; /* Add padding for a cleaner look */
+}
+
+.deliveryType {
+    text-align: center;
+}
+
+#customerName {
+    width: 25%; /* Make the input fill the entire width of the container */
+    padding: 8px; /* Add padding for a cleaner look */
+    margin-top: 10px; /* Add margin for spacing */
+}
+
+#submit {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Add padding for a cleaner look */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+    margin-top: 10px; /* Add margin for spacing */
+}
+
+#submit:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+.grid h1 {
+    text-align: center;
+}
+
+.dietary-icons {
+    margin-top: 5px;
+}
+
+.dietary-icons i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: black; /* Adjust the color as needed */
+}
+
+.icon {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.time {width: 20%}

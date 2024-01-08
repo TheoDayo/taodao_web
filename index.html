@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tao Dao</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
@@ -13,11 +14,19 @@
 </nav>
 
 <section class="menu">
+    <h1>Menu</h1>
+    <div class="grid">
+        <h1>Chinese</h1>
+        <h1>Japanese</h1>
+        <h1>Vietnamese</h1>
+        <h1>Filipino</h1>
+        <h1>Korean</h1>
+    </div>
     <div class="grid">
         <div class="cell">
             <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
             <div class="dish-name">Kung Pao Chicken</div>
-            <div class="dietary-icon">🌱</div>
+            <span class="dietary-icons">🥜🍞🥛🌶️🌱</span>
             <div class="dish-description">Spicy chicken with peanuts and vegetables.</div>
         </div>
         <!-- Repeat the above cell structure for other dishes -->
@@ -78,61 +87,140 @@
     </div>
 </section>
 
+<section class="icon-list">
+    <div class="icon vegetarian">🌱 = Vegetarian</div>
+    <div class="icon spicy">🌶️ = Spicy</div>
+    <span class="icon dairy-free">🥛 = Dairy-free</div>
+    <div class="icon gluten-free">🍞 = Gluten-free</div>
+    <div class="icon nut-free">🥜 = Nut-free</div>
+</section>
+
+<section>
+    <!-- dietary restriction icons and their meaning -->
+</section>
+
 <section class="order-form">
+    <h1>Order form</h1>
+
+    <div>
+        <!-- delivery and pickup times. table? -->
+    </div>
+
+    <p>Pickup Address: 33545 Rainbow Avenue, Abbotsford. Call or text the Chef when you arrive.</p>
+
     <form method="post" action="https://sheetdb.io/api/v1/kji2pl9y6sbu9" id="sheetdb-form">
-        <div>
-            <label><input type="radio" name="data[deliveryType]" value="pickup">Pickup</label>
-            <label><input type="radio" name="data[deliveryType]" value="delivery">Delivery</label>
-        </div>
+        <table>
+            <tr>
+                <th></th>
+                <th>Dish name</th>
+                <th>Delivery Type</th>
+                <th>Time</th>
+            </tr>
 
-        <div>
-            <label for="dishName">Dish 1:</label>
-            <select id="dishName" class="dish-name" name="data[dishName]">
-                <option value="Kung Pao Chicken">Kung Pao Chicken</option>
-                <option value="Kung Pao Tofu">Kung Pao Tofu</option>
-                <option value="Pork Yaki Udon">Pork Yaki Udon</option>
-                <!-- Repeat options for other dishes -->
-            </select>
+            <!-- Repeat this block for each dish -->
+            <tr>
+                <td>1.</td>
 
-            <label for="time">Time:</label>
-            <select id="time" name="data[time]">
-                <!-- Options will be dynamically updated based on radio button selection using JavaScript -->
-            </select>
-        </div>
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
 
-        <div>
-            <label for="dishName">Dish 2:</label>
-            <select id="dishName" class="dish-name" name="data[dishName]">
-                <option value="Kung Pao Chicken">Kung Pao Chicken</option>
-                <option value="Kung Pao Tofu">Kung Pao Tofu</option>
-                <option value="Pork Yaki Udon">Pork Yaki Udon</option>
-                <!-- Repeat options for other dishes -->
-            </select>
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
 
-            <label for="time">Time:</label>
-            <select id="time" name="data[time]">
-                <!-- Options will be dynamically updated based on radio button selection using JavaScript -->
-            </select>
-        </div>
+                <td class="time">
+                    <select  name="data[time]"></select>
+                </td>
+            </tr>
+            <!-- Repeat this block for each dish -->
 
-        <div>
-            <label for="dishName">Dish 3:</label>
-            <select id="dishName" class="dish-name" name="data[dishName]">
-                <option value="Kung Pao Chicken">Kung Pao Chicken</option>
-                <option value="Kung Pao Tofu">Kung Pao Tofu</option>
-                <option value="Pork Yaki Udon">Pork Yaki Udon</option>
-                <!-- Repeat options for other dishes -->
-            </select>
+            <tr>
+                <td>2.</td>
 
-            <label for="time">Time:</label>
-            <select id="time" name="data[time]">
-                <!-- Options will be dynamically updated based on radio button selection using JavaScript -->
-            </select>
-        </div>
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
+
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
+
+                <td class="time">
+                    <select name="data[time]"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3.</td>
+
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
+
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
+
+                <td class="time" >
+                    <select name="data[time]"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4.</td>
+
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
+
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
+
+                <td class="time" >
+                    <select name="data[time]"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>5.</td>
+
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
+
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
+
+                <td class="time" >
+                    <select name="data[time]"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>6.</td>
+
+                <td>
+                    <select class="dish-name" name="data[dishName]"></select>
+                </td>
+
+                <td>
+                    <select id="deliveryType" class="deliveryType" name="data[deliveryType]"></select>
+                </td>
+
+                <td class="time">
+                    <select  name="data[time]"></select>
+                </td>
+            </tr>
+
+
+        </table>
 
         <div>
             <label for="customerName">Your Name:</label>
-            <input type="text" id="customerName" name="data[customerName]">
+            <input type="text" id="customerName" name="data[customerName]" required>
         </div>
 
         <div>
@@ -141,6 +229,132 @@
     </form>
 </section>
 
-<script src="script.js"></script>
+<script>
+    // Dish options without repetition
+    const dishOptions = ["-","Kung Pao Chicken", "Kung Pao Tofu", "Pancit Canton", "Vegan Pancit Canton", "Egg Fried Rice", "Tofu Fried Rice", "Bibimbap", "Vegan Bibimbap", "Pork Yaki Udon", "Tofu Yaki Udon"];
+
+    // Time options based on delivery type
+    const pickupTimeOptions = ["Wednesday 5:00pm-6:00pm", "Thursday 5:00pm-6:00pm", "Friday 11:00am - 1:00pm", "Saturday 11:00am - 1:00pm"];
+    const deliveryTimeOptions = ["Wednesday 7:00pm-8:00pm", "Thursday 7:00pm-8:00pm", "Friday 1:00pm - 2:00pm", "Saturday 1:00pm - 2:00pm"];
+    const deliveryTypes = ["-","Delivery", "Pickup"];
+
+    // Iterate over each select element with the class 'deliveryType'
+    document.querySelectorAll('.deliveryType').forEach((deliveryTypeSelect, index) => {
+        // Populate the options dynamically
+        deliveryTypes.forEach(type => {
+            const optionElement = document.createElement('option');
+            optionElement.value = type.toLowerCase(); // Use lowercase for consistency
+            optionElement.text = type;
+            deliveryTypeSelect.add(optionElement);
+        });
+    });
+
+    // Function to remove repetition and populate select options
+    function populateSelectOptions(selectElement, options) {
+        // Clear existing options
+        selectElement.innerHTML = '';
+
+        // Add unique options
+        const uniqueOptions = [...new Set(options)];
+        uniqueOptions.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.text = option;
+            selectElement.add(optionElement);
+        });
+    }
+
+    // Function to update time options based on delivery type
+    function updateTimeOptions(selectElement, deliveryType) {
+        var timeOptions = "-";
+        
+        if (deliveryType === 'pickup') {
+            timeOptions = pickupTimeOptions
+        } else if ((deliveryType === 'delivery')) {
+            timeOptions = deliveryTimeOptions;
+        } 
+        populateSelectOptions(selectElement, timeOptions);
+    }
+
+    // Add event listener to dynamically update time options when delivery type changes
+    document.querySelectorAll('.deliveryType').forEach(select => {
+        select.addEventListener('change', function() {
+            const timeSelect = this.parentNode.nextElementSibling.querySelector('select[name^="data[time"]');
+            updateTimeOptions(timeSelect, this.value);
+        });
+    });
+
+    // Populate dishName and time options for each row
+    document.querySelectorAll('tr').forEach((row, index) => {
+        if (index > 0) { // Skip the header row
+            const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
+            const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
+            const timeSelect = row.querySelector('select[name^="data[time"]');
+
+            // Populate dishName options
+            populateSelectOptions(dishNameSelect, dishOptions);
+
+            // Populate initial time options based on default delivery type (delivery)
+            updateTimeOptions(timeSelect, deliveryTypeSelect.value);
+        }
+    });
+
+    // ... (existing code)
+
+var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    // Array to store orders
+    var orders = [];
+
+    // Iterate through each row (skip the header row)
+    document.querySelectorAll('tr').forEach((row, index) => {
+        if (index > 0) {
+            const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
+            const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
+            const timeSelect = row.querySelector('select[name^="data[time"]');
+            const customerNameInput = document.getElementById('customerName');
+
+            // Create an object with dishName, deliveryType, time, and customerName
+            var orderData = {
+                'dishName': dishNameSelect.value,
+                'deliveryType': deliveryTypeSelect.value,
+                'time': timeSelect.value,
+                'customerName': customerNameInput.value
+            };
+
+            // Add the array to the orders array
+            orders.push(orderData);
+    }});
+
+    // Convert the orders array to a JSON string
+    var ordersJSON = JSON.stringify({ data: orders });
+
+    // Log the JSON string to the console (you can modify this part based on your needs)
+    console.log(ordersJSON);
+
+    // Fetch data and submit the form
+    fetch(form.action, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: ordersJSON
+
+
+    }).then(
+        response => response.json()
+    ).then((html) => {
+        // you can put any JS code here
+        alert('Thank you! Your order is submitted successfully.')
+    });
+});
+
+
+</script>
+
+
 </body>
 </html>
