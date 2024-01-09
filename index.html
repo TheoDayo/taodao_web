@@ -14,73 +14,88 @@
 </nav>
 
 <section class="menu">
-    <h1>Menu</h1>
+    <h1>Menu (actual food photos will be updated next week)</h1>
     <div class="grid">
-        <h3>Chinese </h3>
-        <h3>Japanese</h3>
-        <h3>Vietnamese</h3>
-        <h3>Filipino</h3>
-        <h3>Korean</h3>
+        <div class="nationality">
+            <h3>Chinese</h3>
+            <img class="flag" src="./img/flags/china.svg" alt="Chinese Flag">
+        </div>
+        <div class="nationality">
+            <h3>Japanese</h3>
+            <img class="flag" src="./img/flags/japan.png" alt="Japanese Flag">
+        </div>
+        <div class="nationality">
+            <h3>Vietnamese</h3>
+            <img class="flag" src="./img/flags/vietnam.png" alt="Vietnamese Flag">
+        </div>
+        <div class="nationality">
+            <h3>Filipino</h3>
+            <img class="flag" src="./img/flags/philippies.png" alt="Filipino Flag">
+        </div>
+        <div class="nationality">
+            <h3>South Korean</h3>
+            <img class="flag" src="./img/flags/korean.png" alt="Korean Flag">
+        </div>
     </div>
     <div class="grid">
         <!-- row 1 -->
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/kung-pao-chicken.jpg">
             <div class="dish-name">Kung Pao Chicken</div>
             <span class="dietary-icons">🥛</span>
             <div class="dish-description">White rice with chicken and stir-fried veggies.</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/pork-yaki-udon.jpg">
             <div class="dish-name">Pork Yaki Udon</div>
             <div class="dietary-icon">🥛🥜</div>
             <div class="dish-description">Stir-fried udon noodles with pork, veggies in a soy-mirin sauce</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/egg-fried-rice.jpg">
             <div class="dish-name">Egg Fried Rice</div>
             <div class="dietary-icon">🥛🍞🥜</div>
             <div class="dish-description">Stir-fried white rice with scrambled eggs and a dash of fish sauce</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/pancit-canton.jpg">
             <div class="dish-name">Pancit Canton</div>
             <div class="dietary-icon">🥛🥜</div>
             <div class="dish-description">Stir-fried pancit canton noodles with chicken, veggies and soy sauce</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/bibimbap.jpg">
             <div class="dish-name">Bibimbap</div>
             <div class="dietary-icon">🥛🥜🌶️</div>
             <div class="dish-description">Sushi rice with veggies, pork, a fried egg, and spicy gochujang sauce</div>
         </div>
         <!-- row 2 -->
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/kung-pao-chicken.jpg">
             <div class="dish-name">Kung Pao Tofu</div>
             <div class="dietary-icon">🥦🥛🍞</div>
             <div class="dish-description">White rice with tofu and stir-fried veggies.</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/pork-yaki-udon.jpg">
             <div class="dish-name">Tofu Yaki Udon</div>
             <div class="dietary-icon">🥦🥛🥜</div>
             <div class="dish-description">Stir-fried udon noodles with tofu, veggies in a soy-mirin sauce</div>
         </div>      
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/egg-fried-rice.jpg">
             <div class="dish-name">Tofu Fried Rice</div>
             <div class="dietary-icon">🥦🥛🍞🥜</div>
             <div class="dish-description">Stir-fried white rice with crumbled tofu and a dash of tamari sauce</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/pancit-canton.jpg">
             <div class="dish-name">Vegan Pancit Canton</div>
             <div class="dietary-icon">🥦🥛🥜</div>
             <div class="dish-description">Stir-fried pancit canton noodles with tofu, veggies and soy sauce.</div>
         </div>
         <div class="cell">
-            <img src="./img/kung-pao-chicken.jpg" alt="Dish 1">
+            <img src="./img/dishes/bibimbap.jpg">
             <div class="dish-name">Vegan Bibimbap</div>
             <div class="dietary-icon">🥦🥛🥜🌶️</div>
             <div class="dish-description">Sushi rice with veggies, tofu, and spicy gochujang sauce</div>
@@ -285,6 +300,11 @@
         });
     });
 
+    // Function to validate dish name selection
+    function validateDishName(selectElement) {
+        return selectElement.value !== '-';
+    }
+
     // Populate dishName and time options for each row
     document.querySelectorAll('tr').forEach((row, index) => {
         if (index > 0) { // Skip the header row
@@ -300,7 +320,37 @@
         }
     });
 
-    // ... (existing code)
+
+    function validateSelections() {
+        let atLeastOneDishSelected = false;
+
+        // Iterate through each row (skip the header row)
+        document.querySelectorAll('tr').forEach((row, index) => {
+            if (index > 0) {
+                const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
+                const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
+                const timeSelect = row.querySelector('select[name^="data[time"]');
+
+                // Check if a dish is selected
+                if (dishNameSelect.value !== '-') {
+                    atLeastOneDishSelected = true;
+
+                    // Check if corresponding delivery type and time are selected
+                    if (deliveryTypeSelect.value === '-' || timeSelect.value === '-') {
+                        alert('Both delivery type and time must be selected.');
+                        return false; // Stop the iteration and return false
+                    }
+                }
+            }
+        });
+
+        if (!atLeastOneDishSelected) {
+            alert('Please select at least one dish.');
+            return false;
+        }
+
+        return true;
+    }
 
 var form = document.getElementById('sheetdb-form');
 form.addEventListener("submit", e => {
@@ -308,50 +358,62 @@ form.addEventListener("submit", e => {
 
     // Array to store orders
     var orders = [];
+    // Flag to check if validation passes
+    var validationPassed =  validateSelections();
 
+    // Validate at least one dish name selection
+    if (!validationPassed) {
+
+            validationPassed = false;
+        } else {
     // Iterate through each row (skip the header row)
-    document.querySelectorAll('tr').forEach((row, index) => {
-        if (index > 0) {
-            const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
-            const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
-            const timeSelect = row.querySelector('select[name^="data[time"]');
-            const customerNameInput = document.getElementById('customerName');
+        document.querySelectorAll('tr').forEach((row, index) => {
+            if (index > 0) {
+                const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
+                const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
+                const timeSelect = row.querySelector('select[name^="data[time"]');
+                const customerNameInput = document.getElementById('customerName');
 
-            // Create an object with dishName, deliveryType, time, and customerName
-            var orderData = {
-                'dishName': dishNameSelect.value,
-                'deliveryType': deliveryTypeSelect.value,
-                'time': timeSelect.value,
-                'customerName': customerNameInput.value
-            };
+              
+                // Create an object with dishName, deliveryType, time, and customerName
+                var orderData = {
+                    'dishName': dishNameSelect.value,
+                    'deliveryType': deliveryTypeSelect.value,
+                    'time': timeSelect.value,
+                    'customerName': customerNameInput.value
+                };
 
-            // Add the array to the orders array
-            orders.push(orderData);
-    }});
+                // Add the array to the orders array
+                orders.push(orderData);
+        }});
+    }
 
-    // Convert the orders array to a JSON string
-    var ordersJSON = JSON.stringify({ data: orders });
+    if (validationPassed) {
+        // Convert the orders array to a JSON string
+        var ordersJSON = JSON.stringify({ data: orders });
 
-    // Log the JSON string to the console (you can modify this part based on your needs)
-    console.log(ordersJSON);
+        // Log the JSON string to the console (you can modify this part based on your needs)
+        console.log(ordersJSON);
 
-    // Fetch data and submit the form
-    fetch(form.action, {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: ordersJSON
+        // Fetch data and submit the form
+        fetch(form.action, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: ordersJSON
 
 
-    }).then(
-        response => response.json()
-    ).then((html) => {
-        // you can put any JS code here
-        alert('Thank you! Your order is submitted successfully.')
-    });
+        }).then(
+            response => response.json()
+        ).then((html) => {
+            // you can put any JS code here
+            alert('Thank you! Your order is submitted successfully.')
+        });
+    }
 });
+
 
 
 </script>

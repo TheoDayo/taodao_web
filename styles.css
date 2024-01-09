@@ -10,7 +10,7 @@ body {
 
 nav {
     background-color: #FF7A00;
-    color: black;
+    color: white;
     padding: 15px;
     margin: 0 auto;
     text-align: center;
@@ -116,8 +116,21 @@ th {
     background-color: #45a049; /* Darker green color on hover */
 }
 
-.grid h3 {
+
+.nationality {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+h3 {
+    margin: 0;
+    padding: 5px 10px;
+    display: inline;
+
+}
+.nationality img {
+    margin:0;
 }
 
 .dietary-icons {
@@ -127,6 +140,7 @@ th {
 .icon {
     margin-left: 20px;
     font-size: 20px;
+    
 }
 
 .time {width: 20%}
@@ -137,3 +151,13 @@ th {
 .dish-description {
     margin: 10px 0;
 }
+
+.flag {
+    height: 25px;
+    width: 38px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+/* h1 {
+    text-align: center;
+} */
