@@ -300,10 +300,6 @@
         });
     });
 
-    // Function to validate dish name selection
-    function validateDishName(selectElement) {
-        return selectElement.value !== '-';
-    }
 
     // Populate dishName and time options for each row
     document.querySelectorAll('tr').forEach((row, index) => {
@@ -320,53 +316,50 @@
         }
     });
 
-
     function validateSelections() {
-        let atLeastOneDishSelected = false;
+    let atLeastOneDishSelected = false;
 
-        // Iterate through each row (skip the header row)
-        document.querySelectorAll('tr').forEach((row, index) => {
-            if (index > 0) {
-                const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
-                const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
-                const timeSelect = row.querySelector('select[name^="data[time"]');
+    // Iterate through each row (skip the header row)
+    let valid = true;
+    document.querySelectorAll('tr').forEach((row, index) => {
+        if (index > 0) {
+            const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
+            const deliveryTypeSelect = row.querySelector('select[name^="data[deliveryType"]');
+            const timeSelect = row.querySelector('select[name^="data[time"]');
 
-                // Check if a dish is selected
-                if (dishNameSelect.value !== '-') {
-                    atLeastOneDishSelected = true;
+            // Check if a dish is selected
+            if (dishNameSelect.value !== '-') {
+                atLeastOneDishSelected = true;
 
-                    // Check if corresponding delivery type and time are selected
-                    if (deliveryTypeSelect.value === '-' || timeSelect.value === '-') {
-                        alert('Both delivery type and time must be selected.');
-                        return false; // Stop the iteration and return false
-                    }
+                // Check if corresponding delivery type and time are selected
+                if (deliveryTypeSelect.value === '-' || timeSelect.value === '-') {
+                    alert('Both delivery type and time must be selected for each dish.');
+                    valid = false;
                 }
             }
-        });
-
-        if (!atLeastOneDishSelected) {
-            alert('Please select at least one dish.');
-            return false;
         }
+    });
 
-        return true;
+    if (!atLeastOneDishSelected) {
+        alert('Please select at least one dish.');
+        valid = false;
     }
+
+    return valid;
+}
 
 var form = document.getElementById('sheetdb-form');
 form.addEventListener("submit", e => {
     e.preventDefault();
 
+    // Validate selections
+    if (!validateSelections()) {
+        return;
+    }
+    
     // Array to store orders
     var orders = [];
-    // Flag to check if validation passes
-    var validationPassed =  validateSelections();
-
-    // Validate at least one dish name selection
-    if (!validationPassed) {
-
-            validationPassed = false;
-        } else {
-    // Iterate through each row (skip the header row)
+ 
         document.querySelectorAll('tr').forEach((row, index) => {
             if (index > 0) {
                 const dishNameSelect = row.querySelector('select[name^="data[dishName"]');
@@ -386,9 +379,7 @@ form.addEventListener("submit", e => {
                 // Add the array to the orders array
                 orders.push(orderData);
         }});
-    }
 
-    if (validationPassed) {
         // Convert the orders array to a JSON string
         var ordersJSON = JSON.stringify({ data: orders });
 
@@ -411,7 +402,6 @@ form.addEventListener("submit", e => {
             // you can put any JS code here
             alert('Thank you! Your order is submitted successfully.')
         });
-    }
 });
 
 
