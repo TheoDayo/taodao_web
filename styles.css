@@ -121,7 +121,9 @@ th {
 #submit:hover {
     background-color: #45a049; /* Darker green color on hover */
 }
-
+.cell img {
+    margin: 10px 0;
+}
 
 .nationality {
     text-align: center;
