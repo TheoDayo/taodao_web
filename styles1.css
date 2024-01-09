@@ -3,7 +3,37 @@
     src: url(./fonts/Commercial/OTF/BaronNeue-Black.otf);
 }
 
+/* Add a media query for screens with a maximum width of 600 pixels (adjust as needed) */
+@media only screen and (max-width: 10000px) {
+    nav {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 
+    .logo {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr); /* Change to a single column for smaller screens */
+        grid-gap: 5px; /* Adjust grid gap for smaller screens */
+    }
+
+    .cell {
+        width: 100%; /* Make each cell take the full width on smaller screens */
+    }
+
+    .dish-name, .deliveryType, [name^="data[time"] {
+        width: 100%; /* Make the selects fill the entire width on smaller screens */
+    }
+
+    #customerName {
+        width: 100%; /* Make the input fill the entire width on smaller screens */
+    }
+
+    .order-form {
+        margin: 10px;
+    }
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -29,12 +59,6 @@ nav {
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-}
-
-.column{
-    display: grid;
-   
     grid-gap: 10px;
 }
 
@@ -133,6 +157,7 @@ h3 {
     margin: 0;
     padding: 5px 10px;
     display: inline;
+
 }
 .nationality img {
     margin:0;
@@ -166,35 +191,3 @@ h3 {
 /* h1 {
     text-align: center;
 } */
-
-/* Add a media query for screens with a maximum width of 600 pixels (adjust as needed) */
-@media only screen and (max-width: 600px) {
-    nav {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .logo {
-        font-size: 20px; /* Adjust font size for smaller screens */
-    }
-
-    .grid {
-        grid-template-columns: repeat(1, 1fr); /* Change to a single column for smaller screens */
-        grid-gap: 5px; /* Adjust grid gap for smaller screens */
-    }
-
-    .cell {
-        width: 100%; /* Make each cell take the full width on smaller screens */
-    }
-
-    .dish-name, .deliveryType, [name^="data[time"] {
-        width: 100%; /* Make the selects fill the entire width on smaller screens */
-    }
-
-    #customerName {
-        width: 100%; /* Make the input fill the entire width on smaller screens */
-    }
-
-    .order-form {
-        margin: 10px;
-    }
-}
