@@ -1,13 +1,25 @@
+@font-face {
+    font-family: "Baron";
+    src: url(./fonts/Commercial/OTF/BaronNeue-Black.otf);
+}
+  
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
 }
 
 nav {
     background-color: #FF7A00;
     color: black;
-    padding: 15px
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
 }
 
+.logo {
+    font-family: "Baron";
+    font-size: 25px;
+}
 .menu {
     margin: 20px;
 }
@@ -104,18 +116,12 @@ th {
     background-color: #45a049; /* Darker green color on hover */
 }
 
-.grid h1 {
+.grid h3 {
     text-align: center;
 }
 
 .dietary-icons {
     margin-top: 5px;
-}
-
-.dietary-icons i {
-    font-size: 16px;
-    margin-right: 5px;
-    color: black; /* Adjust the color as needed */
 }
 
 .icon {
@@ -124,3 +130,10 @@ th {
 }
 
 .time {width: 20%}
+
+.dish-name {
+    font-weight: bold;
+}
+.dish-description {
+    margin: 10px 0;
+}
