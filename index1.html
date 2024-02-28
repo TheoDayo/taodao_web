@@ -32,7 +32,6 @@
                 <div class="dietary-icon">🥦🥛🍞</div>
                 <div class="dish-description">White rice with tofu and stir-fried veggies.</div>
             </div>
-        
         </div>
         <div class="column">
             <div class="nationality">
@@ -40,12 +39,17 @@
                 <img class="flag" src="./img/flags/japan.png" alt="Japanese Flag">
             </div>
             <div class="cell">
-                <img src="./img/dishes/oyakodon.jpg">
-                <div class="dish-name">Oyakodon</div>
-                <div class="dietary-icon">🥛🥜🍞</div>
-                <div class="dish-description">Sushi rice with umami-flavored eggs and onion</div>
-            </div> 
-            
+                <img src="./img/dishes/pork-yaki-udon.jpeg">
+                <div class="dish-name">Pork Yaki Udon</div>
+                <div class="dietary-icon">🥛🥜</div>
+                <div class="dish-description">Stir-fried udon noodles with pork, veggies in a soy-mirin sauce</div>
+            </div>
+            <div class="cell">
+                <img src="./img/dishes/pork-yaki-udon.jpeg">
+                <div class="dish-name">Tofu Yaki Udon</div>
+                <div class="dietary-icon">🥦🥛🥜</div>
+                <div class="dish-description">Stir-fried udon noodles with tofu, veggies in a soy-mirin sauce</div>
+            </div>   
         </div>
         <div class="column">
             <div class="nationality">
@@ -53,10 +57,16 @@
                 <img class="flag" src="./img/flags/vietnam.png" alt="Vietnamese Flag">
             </div>
             <div class="cell">
-                <img src="./img/dishes/summer-rolls.png">
-                <div class="dish-name">Summer Rolls</div>
-                <div class="dietary-icon">🥦🥛</div>
-                <div class="dish-description">3 rolls of fresh veggie wraps with peanut sauce</div>
+                <img src="./img/dishes/egg-fried-rice.jpeg">
+                <div class="dish-name">Egg Fried Rice</div>
+                <div class="dietary-icon">🥛🍞🥜</div>
+                <div class="dish-description">Stir-fried white rice with scrambled eggs and a dash of fish sauce</div>
+            </div>
+            <div class="cell">
+                <img src="./img/dishes/egg-fried-rice.jpeg">
+                <div class="dish-name">Tofu Fried Rice</div>
+                <div class="dietary-icon">🥦🥛🍞🥜</div>
+                <div class="dish-description">Stir-fried white rice with crumbled tofu and a dash of tamari sauce</div>
             </div>
         </div>
         <div class="column">
@@ -65,10 +75,16 @@
                 <img class="flag" src="./img/flags/philippies.png" alt="Filipino Flag">
             </div>
             <div class="cell">
-                <img src="./img/dishes/adobo.png">
-                <div class="dish-name">Adobo</div>
+                <img src="./img/dishes/pancit-canton.jpeg">
+                <div class="dish-name">Pancit Canton</div>
                 <div class="dietary-icon">🥛🥜</div>
-                <div class="dish-description">White rice with chicken and potatoes marinated in soy sauce</div>
+                <div class="dish-description">Stir-fried pancit canton noodles with chicken, veggies and soy sauce.</div>
+            </div>
+            <div class="cell">
+                <img src="./img/dishes/pancit-canton.jpeg">
+                <div class="dish-name">Vegan Pancit Canton</div>
+                <div class="dietary-icon">🥦🥛🥜</div>
+                <div class="dish-description">Stir-fried pancit canton noodles with tofu, veggies and soy sauce.</div>
             </div>
         </div>
         <div class="column">
@@ -77,16 +93,16 @@
                 <img class="flag" src="./img/flags/korean.png" alt="Korean Flag">
             </div>
             <div class="cell">
-                <img src="./img/dishes/japchae.png">
-                <div class="dish-name">Japchae</div>
-                <div class="dietary-icon">🥛🥜</div>
-                <div class="dish-description">Stir fried potato noodles with veggies, pork</div>
+                <img src="./img/dishes/bibimbap.jpg">
+                <div class="dish-name">Bibimbap</div>
+                <div class="dietary-icon">🥛🥜🌶️</div>
+                <div class="dish-description">Sushi rice with veggies, pork, a fried egg, and spicy gochujang sauce.</div>
             </div>
             <div class="cell">
-                <img src="./img/dishes/japchae.png">
-                <div class="dish-name">Vegan Japchae</div>
-                <div class="dietary-icon">🥦🥛🥜</div>
-                <div class="dish-description">Stir fried potato noodles with veggies, tofu</div>
+                <img src="./img/dishes/bibimbap.jpg">
+                <div class="dish-name">Vegan Bibimbap</div>
+                <div class="dietary-icon">🥦🥛🥜🌶️</div>
+                <div class="dish-description">Sushi rice with veggies, tofu, and spicy gochujang sauce.</div>
             </div>
         </div>
     </div>
@@ -138,7 +154,7 @@
     </div>
 
     <p>Pickup Address: 33545 Rainbow Avenue, Abbotsford. Call or text the Chef when you arrive.</p>
-    <p>Orders for March 6 - March 9 period. Wednesday - Saturday.</p>
+    <p>Orders for February 28 - March 2 period. Wednesday - Saturday.</p>
     <p>Menu opens every Friday afternoon (12pm), and closes every Sunday midnight (12am)</p>
     
 
@@ -297,7 +313,7 @@
 
 <script>
     // Dish options without repetition
-    const dishOptions = ["-","Kung Pao Chicken", "Kung Pao Tofu", "Adobo",  "Summer Rolls", "Japchae", "Vegan Japchae", "Oyakodon"];
+    const dishOptions = ["-","Kung Pao Chicken", "Kung Pao Tofu", "Pancit Canton", "Vegan Pancit Canton", "Egg Fried Rice", "Tofu Fried Rice", "Bibimbap", "Vegan Bibimbap", "Pork Yaki Udon", "Tofu Yaki Udon"];
 
     // Time options based on delivery type
     const pickupTimeOptions = ["Wednesday 5:00pm-6:00pm", "Thursday 5:00pm-6:00pm", "Friday 11:00am - 1:00pm", "Saturday 11:00am - 1:00pm"];
